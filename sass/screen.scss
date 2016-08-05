@@ -1,0 +1,111 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "compass";
+$browser-minimum-versions: ("ie":"7");
+.clearfix{
+	@include clearfix
+}
+.opacity{
+	@include opacity(0.3);
+}
+
+.list-horizontal{
+	@include horizontal-list(false,left)
+}
+.inline-block{
+	@include inline-block
+}
+.text-wrap{
+	@include force-wrap
+}
+.text-nowrap{
+	@include nowrap
+}
+.text-ellipsis{
+	@include ellipsis
+}
+.text-hide{
+	@include hide-text
+}
+.text-squish{
+	@include squish-text
+}
+.clearfix{
+	@include legacy-pie-clearfix
+}
+.pull-left{
+	@include float(left)
+}
+.pull-right{
+	@include float(right)
+}
+.has-layout{
+	@include has-layout
+}
+$inner-size:1200px;
+$lg-box-size:320px;
+$form-width:260px;
+.container{
+	width:$inner-size;
+	margin:0 6px 9px auto;
+}
+.lg-border-radius{
+	@include border-radius(5px);
+}
+.input-skin{
+  padding:6px 0;
+  border:0 none;
+  outline:0 none;
+  @extend .lg-border-radius;
+}
+.lg-vertical-spacing{
+  margin:15px 0;
+}
+.lg-box-shadow{
+	box-shadow:0px 1px 3px #666;
+}
+.no-padding{
+	padding:0;
+}
+.header-inner{
+	@extend .container;
+	@include clearfix;
+	@at-root{
+		.site-logo{
+			@extend .pull-right;
+			margin:9px 0;
+		}
+		.header-nav{
+			@extend .pull-right;
+			@include inline-block-list;
+			li{
+				line-height:60px;
+				&:hover{
+					background:#f0f0f0;
+				}
+				a{
+					@include inline-block;
+					@include unstyled-link;
+					padding:0 10px;
+					font-size:20px;
+				}
+			}
+		}
+		.login-banner-list{
+			width:100%;
+			height:434px;
+			@include inline-block-list;
+		}
+		li{
+			img{
+				@media screen and(max-width:1900px){
+					margin-left:-220px;
+				}
+			}
+		}
+	}
+}
